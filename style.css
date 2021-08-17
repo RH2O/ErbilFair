@@ -12,6 +12,7 @@ body{
     margin: 0px;
     padding: 0px;
 }
+
 p,label{
     font-size: 12px;
 }
@@ -99,7 +100,6 @@ p,label{
 .step p{
     margin-right: 4px;
     margin-left: 5px;
-    font-weight: bold;
 }
 /*  */
 .info{
@@ -110,6 +110,9 @@ p,label{
     height: 32px;
     margin: 0px;
     font-size: 8px;
+}
+.info-bold{
+    font-weight: bold;
 }
 
 .circle-round{
@@ -122,7 +125,6 @@ p,label{
     background-color: #9B9B9B;
     color: #fff;
     border-radius: 50%;
-
 }
 .steps hr{
     width: 35px;
@@ -132,8 +134,9 @@ p,label{
 /*  */
 
 .body-overhead-backbone{
-    width: 84%;
-    margin-left: 30px;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 50px;
 }
 .header-info{
     margin-top: 1rem;
@@ -192,19 +195,14 @@ p,label{
     text-align: center;
 }
 .back-step-button{
-    margin: 20px auto;
+    margin: 20px 0px;
     font-size: 13px;
     text-align: center;
-    background-color: #5b5c7c00;
+    color: #3C3D59;
     display: block;
     font-weight: bold;
-    padding: 10px;
-    border: none;
-    border-bottom: 2px solid #3C3D59
-
-
 }
-.next-step-button button{
+.nextButton{
     width: 73%;
     height: 42px;
     height: 3.231rem;
@@ -212,67 +210,116 @@ p,label{
     outline: none;
     box-shadow: 5px 5px #3C3D59;
     color: #3C3D59;
-    font-weight: bold;
+    font-weight: 800;
     font-size: 13px;
     cursor: pointer;
     margin-bottom: 0px;
     border: 0.7px solid #3C3D59;
     margin-top: 1.9rem;
+    letter-spacing: 1px;
+
+}
+.arrow-bu::after{
+    content: '';
+    background: url("Images/arrow-right.svg") center no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
 
 }
 .icofont{
-    display: inline-flex;
-    font-size: 20px;
-    color: #3C3D59;
-    justify-content: center;
-    align-items: center;
+    display: inline;
+
+    position: relative;
+    width: 50px;
+    height: 50px;
 }
+.icofont img{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50% -50%);
+}
+    
 .background-input{
     width: 100%;
-    height: auto;
-    background-color: #E5E5E5;
-    padding-left: 30px;
 }
+
 .overhead-checkbox{
     margin-top: 17px;
-    margin-bottom: 25px;
     display: flex;
     flex-direction: column;
+    padding-bottom: 10px;
+    padding-left: 20px;
 }
 .background-input p{
     padding-top: 14px;
 }
-.overhead-checkbox div,.overhead-radio div{
+.overhead-checkbox div{
     display: flex;
     align-items: center;
-    margin-bottom: -8px;
+    justify-items: center;
+}
+.overhead-checkbox div label{
+    font-weight: 500;
 }
 .background-input input[type="checkbox"]{
+
     width: 21px;
-    border: 1px solid #3C3D59;
+    height: 21px;
+    border: 0.094rem solid #3C3D59 !important;
+    /* -webkit-appearance: none; 
+     -moz-appearance: none; 
+    appearance: none; */
+    margin: 0px;
+    position: relative;
+}
+.background-input input[type="checkbox"]:not(:checked)::before{
+    content: '';
+    width: 18px;
+    height: 18px;
+    margin: 0px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 2px solid #3C3D59 !important;
     border-radius: 0px;
-    margin-right: 12px;
-    margin-bottom: 0px;
+    background-color: #fff;
+    -webkit-transition: all ease 2s;
+    transition: all ease 2s;
+}
+.background-input input[type="checkbox"]:checked::after{
+    content: '';
+    background: url("Images/Vector\ \(Stroke\).svg") center no-repeat;
+    width: 21px;
+    height: 21px;
+    align-items: center;
+    box-shadow: 3px 3px #3C3D59;
+    margin: 0px;
+    position: absolute;
+    
+    bottom: 0;
+    left: 0;
+    background-color: #FBC531;
+    border-radius: 0px;
+    -webkit-transition: all ease 2s;
+    transition: all ease 2s;
 
 }
-.background-input input[type="radio"]{
-    width: 21px;
-    border: 1px solid #3C3D59;
-    margin-right: 12px;
-    margin-bottom: 0px;
-}
-.background-input input[type="radio"]{
-    width: 21px;
-    border: 1px solid #3C3D59;
-    border-radius: 0px;
-    margin-right: 12px;
-    margin-bottom: 0px;
 
+.background-input div{
+    margin-bottom: 12px;
 }
 .background-input div label{
     margin: 0px;
+    margin-left: 15px;
 }
-  
+.arrow{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    line-height: 20px;
+
+}
 .tab {
     display: none;
 }
@@ -280,8 +327,19 @@ p,label{
     background-color: #FBC531;
 }
 .circle-round.finish {
-    background-color: #04AA6D;
+    background-color: #08AD36;
+    background-image: url('Images/Vector\ \(Stroke\).svg');
+    background-repeat: no-repeat;
+    background-position: center center;
 }
+
+.sub{
+    background-color: #FBC531;
+}
+.hidden-num{
+    display: none;
+}
+
 
 
 .qrBox{
@@ -294,7 +352,7 @@ p,label{
     text-align: center;
     padding: 15px;
     position: absolute; 
-    top: 30%;
+    top: 20%;
     left: 0; 
     right: 0; 
     margin-left: auto; 
@@ -306,7 +364,7 @@ p,label{
 
     height: 100%;
     width: 100%;
-    background-color: rgba(221, 221, 221, 0.253);
+    background-color: rgba(221, 221, 221, 0.329);
     position: absolute;
     top: 0;
     left: 0;
@@ -328,12 +386,24 @@ p,label{
 
 }
 
-@media only screen and (max-width: 915px) {
+
+
+
+@media only screen and (max-width: 998px) {
+
     .foreground-backbone{
         display: none;
+        height: 100vh;
+
     }
     .background-backbone{
         flex-direction: column;
+        height: 100vh;
+
+    }
+    .body-overhead-backbone{
+        margin-left: 0px;
+        margin: auto;
     }
     .bg {
         display: block;
@@ -387,7 +457,38 @@ p,label{
 
 
 
+  @media only screen and (max-width: 375px) {
+    .bg {height: 18rem; }
+  .overhead-backbone {margin-top: 4rem;}
+}
 
+@media only screen and (min-width: 376px) and (max-width: 450px) {
+  .bg {height: 20rem;}
+  .overhead-backbone {margin-top: 4rem;}
+}
+
+@media only screen and (min-width: 451px) and (max-width: 500px) {
+  .bg {height: 22rem;}
+  .overhead-backbone {margin-top: 6rem;}
+}
+
+@media only screen and (min-width: 501px) and (max-width: 600px) {
+  .overhead-backbone {margin-top: 6rem;}
+  .bg {height: 25rem;}
+}
+@media only screen and (min-width: 601px) and (max-width: 700px) {
+  .bg {height: 27.8rem;}
+  .overhead-backbone {margin-top: 6rem;}
+}
+@media only screen and (min-width: 701px) and (max-width: 800px) {
+  .bg {height: 32.5rem;}
+  .overhead-backbone {margin-top: 6rem;}
+}
+
+@media only screen and (min-width: 800px) and (max-width: 914px) {
+  .bg {height: 35rem;}
+  .overhead-backbone {margin-top: 6rem;}
+}
 
 @media only screen and (max-width: 1100px) {
     p,label,.circle-round{
@@ -420,3 +521,70 @@ p,label{
 }
 
 
+.backk{
+    box-sizing: border-box;
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    max-height: 400px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.body-overhead-backbonee{
+    width: 73%;
+    margin: auto;
+    text-align: center;
+}
+.par-result{
+    font-size: 10px;
+}
+.bottom-backbonee{
+    width: 100%;
+    padding-top: 20px;
+}
+.next-step-buttone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.nextButtone{
+    width: 75%;
+    height: 2.75rem;
+    background-color: #FBC531;
+    outline: none;
+    box-shadow: 5px 5px #3C3D59;
+    color: #3C3D59;
+    font-weight: 800;
+    font-size: 0.813rem;
+    cursor: pointer;
+    margin-bottom: 0px;
+    border: 0.7px solid #3C3D59;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+.back-step-buttone{
+    margin: 20px 0px;
+    font-size: 0.813rem;
+    text-align: center;
+    color: #3C3D59;
+    display: block;
+    font-weight: bold;
+}
+.qr{
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+}
+.qr img{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
